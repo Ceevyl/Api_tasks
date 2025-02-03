@@ -45,7 +45,7 @@ const reorganization = (value) => {
 };
 
 app.get('/', (req, res) => {
-    res.status(200).send('Servidor de Tasks <3 by Ceevyl');
+    res.status(200).send('Beijinhos pra Sophia ❤️');
 });
 
 app.post('/tasks', (req, res) => {
