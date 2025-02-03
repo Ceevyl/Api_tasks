@@ -1,11 +1,14 @@
 const express = require("express");
 const app = express();
+
 app.use(express.json());
+app.use(cors())
 
 let all_tasks = [];
 
 
 const reorganization = (value) => {
+
     if (!value){
         return false
     }
@@ -37,6 +40,7 @@ const reorganization = (value) => {
     all_tasks.forEach((task, index) => {
         task.id = index + 1;
     });
+
 };
 
 app.get('/', (req, res) => {
@@ -58,7 +62,7 @@ app.get('/tasks', (req, res) => {
 
 app.put('/subtasks', (req, res) => { 
     const body = req.body;
-    
+
 })
 
 app.listen(3000, () => {
