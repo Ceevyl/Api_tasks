@@ -61,6 +61,20 @@ app.get('/tasks', (req, res) => {
     res.status(200).send(all_tasks)
 })
 
+app.delete('/tasks', (req, res) => {
+    const body = req.body;
+    if ( !body ){
+        return res.status(400).send('Erro ao enviar as informaçõe.')
+    }
+    all_tasks.splice( body.id, 1 );
+
+    for ( let i = 0; i < all_tasks.length; i++ ){
+        all_tasks[i].id = i
+    }
+    
+    res.send(200).send("Item deletado com Sucesso")
+})
+
 app.put('/subtasks', (req, res) => { 
     const body = req.body;
 
