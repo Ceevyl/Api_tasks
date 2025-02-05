@@ -5,7 +5,7 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors())
 
-let all_tasks = [];
+const all_tasks = [];
 
 
 const reorganization = (value) => {
@@ -21,6 +21,7 @@ const reorganization = (value) => {
     for ( var i = 0; i < all_tasks.length; i++ ){
         let v = all_tasks[i];
         let x = new Date(v.date) 
+
         const Dias_Restantes = Math.floor(  ( x - hoje ) / ( 1000 * 60 * 60 * 24 ) )
 
 
